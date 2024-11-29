@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Scripts to speak 🗣️",
-  description: "Scripts to speak",
+  title: "Storyfy🚀",
+  description: "Simple web app that generates audio stories using AI. - Generate scripts with Groq LLM - Convert text to speech - Control playback speed - Download audio files",
 };
 
 export default function RootLayout({
