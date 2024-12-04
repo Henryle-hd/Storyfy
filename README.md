@@ -17,5 +17,5 @@ Simple web app that generates audio stories using AI:
 ## Setup
 
 1. Add API keys in server/.env
-2. Install dependencies in client and server
+2. Install dependencies in client (nextjs) and server (Flask)
 3. Run server and client separately
