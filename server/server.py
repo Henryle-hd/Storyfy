@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 PORT=os.getenv("PORT")
-OUTPUT_DIR = "../client/public/audios"
+OUTPUT_DIR = "../ui/public/audios"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
