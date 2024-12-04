@@ -78,7 +78,7 @@ export default function UserArg() {
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Creating...
+                    Creating🚀
                   </>
                 ) : (
                   <>
@@ -98,7 +98,7 @@ export default function UserArg() {
                 <div className="w-full mx-auto">
                   <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6">
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
-                      <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Your Story 😎</h2>
+                      <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Your Story 😎🎉🔥</h2>
                       {response.path && (
                         <Link href={response.path} download>
                           <Button variant="outline" className="flex items-center gap-2 ring-2 focus:ring-blue-500">
