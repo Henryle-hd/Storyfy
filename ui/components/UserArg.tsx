@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import { Download, Send, BookOpen, Loader2 } from "lucide-react";
+import { Download, BookOpen, Loader2 } from "lucide-react";
 import Link from "next/link";
 
 export default function UserArg() {
@@ -46,7 +46,7 @@ export default function UserArg() {
               <select 
               title="Speed"
                 onChange={(e) => setSpeed(e.target.value)}
-                className="w-[100px] text-l p-5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-[100px] text-l px-5 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center"
               >
                 <option value="" disabled selected>Speed</option>
                 <option value="normal">Normal</option>
@@ -58,7 +58,7 @@ export default function UserArg() {
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
                 className="py-4 px-4 text-base lg:text-xl border rounded-xl shadow-xl ring-2 focus:ring-blue-500 transition-all duration-200 w-full max-w-[700px] h-[100px] resize-none"
-                placeholder="Type Topic to create a audio story (eg. History of Henry Ford)"
+                placeholder="Type Topic to create a audio story (eg. village love)"
               />
             </div>
             <div className="flex justify-center mt-4">
@@ -74,7 +74,7 @@ export default function UserArg() {
                   </>
                 ) : (
                   <>
-                    Create a Story<Send size={20} className="ml-2" />
+                    Create a Story👌
                   </>
                 )}
               </button>
