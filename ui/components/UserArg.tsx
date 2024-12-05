@@ -1,16 +1,8 @@
 'use client'
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Download, Send, BookOpen, Loader2 } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link";
+
 export default function UserArg() {
   const [topic, setTopic] = useState('');
   const [response, setResponse] = useState<{
@@ -51,18 +43,18 @@ export default function UserArg() {
           {!response &&(
             <>
             <div className="flex justify-center items-center mb-4">
-              <Select onValueChange={(value)=>setSpeed(value)}>
-                <SelectTrigger className="w-[100px] text-l p-5">
-                  <SelectValue placeholder="Speed" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="normal">Normal</SelectItem>
-                  <SelectItem value="slower">Slower</SelectItem>
-                </SelectContent>
-              </Select>
+              <select 
+              title="Speed"
+                onChange={(e) => setSpeed(e.target.value)}
+                className="w-[100px] text-l p-5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="" disabled selected>Speed</option>
+                <option value="normal">Normal</option>
+                <option value="slower">Slower</option>
+              </select>
             </div>
             <div className="flex justify-center">
-              <Textarea
+              <textarea
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
                 className="py-4 px-4 text-base lg:text-xl border rounded-xl shadow-xl ring-2 focus:ring-blue-500 transition-all duration-200 w-full max-w-[700px] h-[100px] resize-none"
@@ -70,10 +62,10 @@ export default function UserArg() {
               />
             </div>
             <div className="flex justify-center mt-4">
-              <Button
+              <button
                 onClick={handleSend}
                 disabled={isLoading || !topic.trim()}
-                className="bg-blue-500 hover:bg-blue-600 text-white p-4 shadow-md focus:ring-2 focus:ring-blue-500 transition-all duration-200 text-base lg:text-lg"
+                className="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-md shadow-md focus:ring-2 focus:ring-blue-500 transition-all duration-200 text-base lg:text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <>
@@ -85,7 +77,7 @@ export default function UserArg() {
                     Create a Story<Send size={20} className="ml-2" />
                   </>
                 )}
-              </Button>
+              </button>
             </div>
             </>
           )}
@@ -101,9 +93,9 @@ export default function UserArg() {
                       <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Your Story 😎🎉🔥</h2>
                       {response.path && (
                         <Link href={response.path} download>
-                          <Button variant="outline" className="flex items-center gap-2 ring-2 focus:ring-blue-500">
+                          <button className="border border-gray-200 hover:bg-gray-100 px-4 py-2 rounded-md flex items-center gap-2 ring-2 focus:ring-blue-500">
                             <Download size={20} /> Download Audio
-                          </Button>
+                          </button>
                         </Link>
                       )}
                     </div>
